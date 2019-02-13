@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
+   <children>
+      <VBox prefHeight="622.0" prefWidth="384.0">
+         <children>
+            <HBox fx:id="topBox" prefHeight="71.0" prefWidth="384.0" style="-fx-background-color: #3D4956;" />
+            <Region maxHeight="10.0" minHeight="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0" />
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="384.0" style="-fx-background-color: #3D4956;">
+               <bottom>
+                  <VBox BorderPane.alignment="CENTER">
+                     <children>
+                        <HBox spacing="2.0">
+                           <children>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="Q">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="180.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="W">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="195.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="E">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="165.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="R">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="169.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="T">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="197.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="Y">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="223.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="U">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="139.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="I">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="275.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="O">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton layoutX="249.0" layoutY="15.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="P">
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <Region HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" spacing="2.0">
+                           <children>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="A">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="S">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="D">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="F">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="G">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="H">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="J">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="K">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="L">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <Region HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="110.0" spacing="2.0">
+                           <children>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="Z">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="X">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="C">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="V">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="B">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="N">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="M">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 5em; -fx-background-color: orange;" text="S">
+                                 <font>
+                                    <Font name="Lucida Sans Typewriter Regular" size="14.0" />
+                                 </font>
+                                 <HBox.margin>
+                                    <Insets left="2.0" right="2.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <Region HBox.hgrow="ALWAYS" />
+                           </children>
+                           <padding>
+                              <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
+               </bottom>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>
