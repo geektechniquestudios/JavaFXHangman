@@ -11,7 +11,11 @@ public class HangmanController
 
 	private void makeStageDraggable()
 	{
-		
+
 	}
 
+	private void setSceneOptions()
+	{
+
+	}
 }

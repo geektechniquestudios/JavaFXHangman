@@ -29,11 +29,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try {
 			Pane root = (Pane)FXMLLoader.load(getClass().getResource("HangmanFile.fxml"));
-			Scene scene = new Scene(root);
+			Scene gameScene = new Scene(root);
 			primaryStage.sizeToScene();
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
-			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			scene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			gameScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
 			
 			root.setOnMousePressed(new EventHandler<MouseEvent>() {
 	            @Override
@@ -59,8 +59,7 @@ public class Main extends Application {
 	        	primaryStage.setOpacity(1.0f);
 	        });
 	        
-			
-			primaryStage.setScene(scene);
+			primaryStage.setScene(gameScene);
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

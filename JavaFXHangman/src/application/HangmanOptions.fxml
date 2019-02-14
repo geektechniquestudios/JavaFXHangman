@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
+   <children>
+      <VBox prefHeight="454.0" prefWidth="384.0">
+         <children>
+            <HBox fx:id="topBox" prefHeight="71.0" prefWidth="384.0" style="-fx-background-color: #3D4956;">
+               <effect>
+                  <InnerShadow />
+               </effect></HBox>
+            <Region maxHeight="10.0" minHeight="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0" />
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="383.0" prefWidth="384.0" style="-fx-background-color: #3D4956;">
+               <effect>
+                  <InnerShadow />
+               </effect>
+            </BorderPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>
