@@ -14,7 +14,7 @@
    <children>
       <VBox prefHeight="622.0" prefWidth="384.0">
          <children>
-            <HBox fx:id="topBox" prefHeight="71.0" prefWidth="384.0" style="-fx-background-color: #3D4956;">
+            <HBox fx:id="topBox" prefHeight="93.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <effect>
                   <InnerShadow />
                </effect>
@@ -32,7 +32,7 @@
                      </effect>
                   </ImageView>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
+                  <ImageView layoutX="10.0" layoutY="10.0" onMouseClicked="#setSceneOptions" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
                      <image>
                         <Image url="@../images/settings.png" />
                      </image>
@@ -56,7 +56,7 @@
                      </effect>
                   </ImageView>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView layoutX="10.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
+                  <ImageView layoutX="10.0" layoutY="10.0" onMouseClicked="#quitGame" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
                      <image>
                         <Image url="@../images/x.png" />
                      </image>
@@ -69,8 +69,25 @@
                   </ImageView>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                </children></HBox>
-            <Region maxHeight="10.0" minHeight="10.0" opacity="0.0" prefHeight="200.0" prefWidth="200.0" />
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="544.0" prefWidth="384.0" style="-fx-background-color: #3D4956;">
+            <VBox maxHeight="30.0" prefHeight="30.0" prefWidth="400.0">
+               <children>
+                  <HBox prefHeight="32.0" prefWidth="400.0" VBox.vgrow="NEVER">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-24.0" translateY="4.0">
+                           <image>
+                              <Image url="@../images/upArrow.png" />
+                           </image>
+                        </ImageView>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>

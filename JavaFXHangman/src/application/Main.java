@@ -34,6 +34,7 @@ public class Main extends Application {
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			gameScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			root.requestFocus();
 			
 			root.setOnMousePressed(new EventHandler<MouseEvent>() {
 	            @Override
