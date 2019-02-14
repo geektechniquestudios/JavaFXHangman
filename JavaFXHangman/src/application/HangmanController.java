@@ -9,13 +9,19 @@ public class HangmanController
 	@FXML
 	private HBox topBox;
 
-	private void makeStageDraggable()
-	{
-
-	}
-
+//	private void makeStageDraggable()
+//	{
+//
+//	}
+	@FXML
 	private void setSceneOptions()
 	{
+		System.out.println("options works");
+	}
 
+	@FXML
+	private void quitGame()
+	{
+		System.exit(0);
 	}
 }
