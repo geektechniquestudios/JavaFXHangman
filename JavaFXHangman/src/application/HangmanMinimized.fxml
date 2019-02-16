@@ -11,14 +11,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane prefHeight="73.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MinimizedController">
+<Pane prefHeight="72.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MinimizedController">
    <children>
       <VBox>
          <children>
-            <HBox fx:id="topBox" prefHeight="82.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
-               <effect>
-                  <InnerShadow />
-               </effect>
+            <HBox fx:id="topBox" prefHeight="73.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                   <JFXButton onAction="#openGameScene" styleClass="buttons" stylesheets="@application.css">
@@ -110,4 +107,14 @@
          </children>
       </VBox>
    </children>
+   <effect>
+      <Lighting>
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant />
+         </light>
+      </Lighting>
+   </effect>
 </Pane>
