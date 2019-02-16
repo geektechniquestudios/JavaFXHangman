@@ -119,7 +119,7 @@
                      <children>
                         <Region HBox.hgrow="ALWAYS" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-10.0" translateY="3.0">
+                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-9.0" translateY="3.0">
                            <image>
                               <Image url="@../images/upArrow.png" />
                            </image>

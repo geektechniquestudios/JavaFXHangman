@@ -31,6 +31,8 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try 
 		{
+			primaryStage.setAlwaysOnTop(true);
+			
 			FXMLLoader root = new FXMLLoader(getClass().getResource("HangmanFile.fxml"));//
 		    Parent gameScenePane = root.load();//
 		    Scene gameScene = new Scene(gameScenePane);//
