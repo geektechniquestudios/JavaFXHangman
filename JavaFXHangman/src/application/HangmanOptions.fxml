@@ -12,12 +12,9 @@
 
 <Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.OptionsController">
    <children>
-      <VBox prefHeight="622.0" prefWidth="384.0">
+      <VBox prefHeight="436.0" prefWidth="400.0">
          <children>
-            <HBox fx:id="topBox" prefHeight="93.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
-               <effect>
-                  <InnerShadow />
-               </effect>
+            <HBox fx:id="topBox" prefHeight="82.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                   <JFXButton onAction="#openGameScene">
@@ -72,14 +69,24 @@
                      </graphic>
                   </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-               </children></HBox>
+               </children>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect></HBox>
             <VBox maxHeight="30.0" prefHeight="30.0" prefWidth="400.0">
                <children>
-                  <HBox prefHeight="32.0" prefWidth="400.0" VBox.vgrow="NEVER">
+                  <HBox prefHeight="10.0" prefWidth="400.0" VBox.vgrow="NEVER">
                      <children>
                         <Region HBox.hgrow="ALWAYS" />
                         <Region HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-10.0" translateY="4.0">
+                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-10.0" translateY="3.0">
                            <image>
                               <Image url="@../images/upArrow.png" />
                            </image>
@@ -91,9 +98,24 @@
                   </HBox>
                </children>
             </VBox>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="354.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+               <top>
+                  <AnchorPane prefHeight="227.0" prefWidth="400.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <JFXButton layoutX="59.0" layoutY="45.0" text="Add A Word" />
+                        <JFXButton layoutX="46.0" layoutY="195.0" text="Delete A Word" />
+                     </children>
+                  </AnchorPane>
+               </top>
                <effect>
-                  <InnerShadow />
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
                </effect>
             </BorderPane>
          </children>

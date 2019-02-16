@@ -15,10 +15,7 @@
    <children>
       <VBox prefHeight="622.0" prefWidth="384.0">
          <children>
-            <HBox fx:id="topBox" prefHeight="93.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
-               <effect>
-                  <InnerShadow />
-               </effect>
+            <HBox fx:id="topBox" prefHeight="89.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                   <JFXButton styleClass="buttons" stylesheets="@application.css">
@@ -105,7 +102,17 @@
                      </ripplerFill>
                   </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-               </children></HBox>
+               </children>
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
+               </effect></HBox>
             <VBox maxHeight="30.0" prefHeight="30.0" prefWidth="400.0">
                <children>
                   <HBox prefHeight="32.0" prefWidth="400.0" VBox.vgrow="NEVER">
@@ -124,7 +131,7 @@
                   </HBox>
                </children>
             </VBox>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>
@@ -387,7 +394,14 @@
                   </VBox>
                </bottom>
                <effect>
-                  <InnerShadow />
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant />
+                     </light>
+                  </Lighting>
                </effect>
             </BorderPane>
          </children>

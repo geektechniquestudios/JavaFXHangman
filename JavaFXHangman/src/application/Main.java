@@ -63,8 +63,11 @@ public class Main extends Application {
 			primaryStage.initStyle(StageStyle.TRANSPARENT);
 			
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			//gameScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
-			//optionsScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			optionsScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			minScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			
+			gameScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			optionsScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
 			
 			gameScenePane.requestFocus();//makes it so button isn't highlighted
 			
