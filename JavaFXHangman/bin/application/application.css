@@ -1,2 +1,19 @@
 /* Java	FX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
 .root { -fx-background-color: transparent; }
+
+.buttons:hover
+{
+	-fx-background-color: orange;
+}
+
+.keyboardButtons
+{
+	-fx-background-color: orange;
+	-fx-background-radius: 5em;
+}
+
+.keyboardButtons:hover
+{
+	-fx-background-color: red;
+}
+

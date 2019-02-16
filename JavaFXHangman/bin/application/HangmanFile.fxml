@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.text.*?>
@@ -20,53 +21,89 @@
                </effect>
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../images/play.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <effect>
-                        <Bloom />
-                     </effect>
-                  </ImageView>
+                  <JFXButton styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/play.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.48571428571428577" cycleMethod="REFLECT" focusDistance="-0.13953488372093015" radius="0.38372093023255816">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#a2d0ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView layoutX="10.0" layoutY="10.0" onMouseClicked="#setSceneOptions" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../images/settings.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <effect>
-                        <Bloom />
-                     </effect>
-                  </ImageView>
+                  <JFXButton onAction="#openOptionsScene" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView onMouseClicked="#setSceneOptions" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/settings.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.48571428571428577" cycleMethod="REFLECT" focusDistance="-0.13953488372093015" radius="0.38372093023255816">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#a2d0ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView layoutX="74.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../images/min.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <effect>
-                        <Bloom />
-                     </effect>
-                  </ImageView>
+                  <JFXButton onAction="#openGameScene" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/min.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.48571428571428577" cycleMethod="REFLECT" focusDistance="-0.13953488372093015" radius="0.38372093023255816">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#a2d0ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <ImageView layoutX="10.0" layoutY="10.0" onMouseClicked="#quitGame" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5" HBox.hgrow="NEVER">
-                     <image>
-                        <Image url="@../images/x.png" />
-                     </image>
-                     <HBox.margin>
-                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-                     </HBox.margin>
-                     <effect>
-                        <Bloom />
-                     </effect>
-                  </ImageView>
+                  <JFXButton onAction="#quitGame" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/x.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.5" centerY="0.48571428571428577" cycleMethod="REFLECT" focusDistance="-0.13953488372093015" radius="0.38372093023255816">
+                           <stops>
+                              <Stop color="BLACK" />
+                              <Stop color="#a2d0ff" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
                </children></HBox>
             <VBox maxHeight="30.0" prefHeight="30.0" prefWidth="400.0">
@@ -74,7 +111,7 @@
                   <HBox prefHeight="32.0" prefWidth="400.0" VBox.vgrow="NEVER">
                      <children>
                         <Region HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-25.0" translateY="4.0">
+                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-28.0" translateY="4.0">
                            <image>
                               <Image url="@../images/upArrow.png" />
                            </image>
@@ -345,7 +382,7 @@
                         </HBox>
                      </children>
                      <padding>
-                        <Insets bottom="10.0" />
+                        <Insets bottom="20.0" />
                      </padding>
                   </VBox>
                </bottom>
