@@ -60,7 +60,7 @@
                      </ripplerFill>
                   </JFXButton>
                   <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
-                  <JFXButton onAction="#openGameScene" styleClass="buttons" stylesheets="@application.css">
+                  <JFXButton onAction="#minimizeScene" styleClass="buttons" stylesheets="@application.css">
                      <graphic>
                         <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
                            <image>
