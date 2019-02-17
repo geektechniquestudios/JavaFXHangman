@@ -56,7 +56,6 @@ public class MinimizedController {
         mainScene = scene;
     }
 
-    //@FXML
     public void openGameScene(ActionEvent actionEvent)
     {
         Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();

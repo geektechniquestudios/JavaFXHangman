@@ -17,6 +17,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -32,6 +33,12 @@ public class HangmanController
 
 	@FXML
 	private HBox topBox;
+
+	@FXML
+	private ImageView hangmanImage;
+
+
+
 	private Scene minScene;
 	private Scene optionsScene;
 	private Parent mainSceneParent;
@@ -50,12 +57,6 @@ public class HangmanController
 		System.exit(0);
 	}
 
-	@FXML
-	private void setSceneMinimize()
-	{
-
-	}
-
     public void setMinScene(Scene scene)
     {
         minScene = scene;
@@ -71,8 +72,6 @@ public class HangmanController
     	mainSceneParent = someSceneParent;
     }
 
-
-    //@FXML
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
         Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -94,13 +93,10 @@ public class HangmanController
 //		return RandomWord;
 //	}
 
-//	@Override
 	public void keyboardAction(ActionEvent e) //every time a Letter is tried, this is fired
 	{
-		((JFXButton) e.getSource()).setDisable(true);
-		mainSceneParent.requestFocus();
-		//get focus for pane
-
+		((JFXButton) e.getSource()).setDisable(true);//disables current button
+		mainSceneParent.requestFocus();//makes it so no button is focused after a selection is made
 
 //		String stringToConvert = ((JFXButton) e.getSource()).getText();
 //

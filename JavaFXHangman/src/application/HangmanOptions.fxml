@@ -159,7 +159,7 @@
                            </font>
                         </JFXTextField>
                         <JFXListView layoutX="188.0" layoutY="194.0" prefHeight="163.0" prefWidth="176.0" />
-                        <JFXToggleButton layoutX="75.0" layoutY="35.0" size="12.0" text="Custom Dictionary" textFill="WHITE">
+                        <JFXToggleButton layoutX="39.0" layoutY="32.0" prefHeight="74.0" prefWidth="324.0" size="12.0" text="Custom Dictionary" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>
