@@ -1,11 +1,16 @@
 package application;
 
+import gameLogic.*;
+
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import java.io.IOException;
+
+import com.jfoenix.controls.JFXButton;
+
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -29,12 +34,15 @@ public class HangmanController
 	private HBox topBox;
 	private Scene minScene;
 	private Scene optionsScene;
+	private Parent mainSceneParent;
 
-	@FXML
-	private void setSceneOptions()
-	{
-		System.out.println("options works");
-	}
+	private String currentWord;
+
+//	@FXML
+//	private void setSceneOptions()
+//	{
+//		System.out.println("options works");
+//	}
 
 	@FXML
 	private void quitGame()
@@ -58,6 +66,12 @@ public class HangmanController
     	optionsScene = someScene;
     }
 
+    public void setMainParent(Parent someSceneParent)//for botton focus
+    {
+    	mainSceneParent = someSceneParent;
+    }
+
+
     //@FXML
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
@@ -73,7 +87,29 @@ public class HangmanController
         optionsScene.getRoot().requestFocus();
     }
 
+//	public String setCurrentWord()
+//	{
+//
+//
+//		return RandomWord;
+//	}
 
+//	@Override
+	public void keyboardAction(ActionEvent e) //every time a Letter is tried, this is fired
+	{
+		((JFXButton) e.getSource()).setDisable(true);
+		mainSceneParent.requestFocus();
+		//get focus for pane
+
+
+//		String stringToConvert = ((JFXButton) e.getSource()).getText();
+//
+//
+//		char charToSend = stringToConvert.charAt(0);
+//
+//		boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
+
+	}
 
 
 }
