@@ -406,7 +406,7 @@
                <center>
                   <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
                      <center>
-                        <ImageView fitHeight="308.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER" />
+                        <ImageView fitHeight="308.0" fitWidth="245.0" pickOnBounds="true" preserveRatio="true" translateY="10.0" BorderPane.alignment="CENTER" />
                      </center>
                      <bottom>
                         <Label prefHeight="46.0" prefWidth="80.0" text="Label" textFill="WHITE" BorderPane.alignment="CENTER">

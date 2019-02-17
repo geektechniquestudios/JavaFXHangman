@@ -36,7 +36,7 @@ public class Main extends Application {
 			FXMLLoader root = new FXMLLoader(getClass().getResource("HangmanFile.fxml"));//
 		    Parent gameScenePane = root.load();//
 		    Scene gameScene = new Scene(gameScenePane);//
-
+		    
 		    FXMLLoader minPaneLoader = new FXMLLoader(getClass().getResource("HangmanMinimized.fxml"));//
 	        Parent minSceneLoader = minPaneLoader.load();//
 	        Scene minScene = new Scene(minSceneLoader);//
@@ -49,6 +49,7 @@ public class Main extends Application {
 	        HangmanController rootPaneController = (HangmanController) root.getController();//
 	        rootPaneController.setMinScene(minScene);//
 	        rootPaneController.setOptionsScene(optionsScene);
+	        rootPaneController.setMainParent(gameScenePane);
 
 	        // injecting main and opt scene into the controller of the min scene
 	        MinimizedController minPaneController = (MinimizedController) minPaneLoader.getController();//
