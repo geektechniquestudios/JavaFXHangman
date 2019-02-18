@@ -10,6 +10,17 @@
 	-fx-background-color:rgb(0,128,255)
 }
 
+.startButton
+{
+	-fx-background-color: rgb(0,128,192);
+	-fx-background-radius: 0.7em;
+}
+
+.startButton:hover
+{
+	-fx-background-color: rgb(0,128,255);
+}
+
 .keyboardButtons
 {
 	-fx-background-color: rgb(0,128,192);
