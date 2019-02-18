@@ -40,8 +40,36 @@ public class HangmanController implements Initializable
 	@FXML private Label wordToGuess;
 	@FXML private JFXButton startButton;
 	@FXML private HBox startButtonHBox;
-	
-	private char[] currentWordArray; 
+
+	@FXML private JFXButton aBut;
+	@FXML private JFXButton bBut;
+	@FXML private JFXButton cBut;
+	@FXML private JFXButton dBut;
+	@FXML private JFXButton eBut;
+	@FXML private JFXButton fBut;
+	@FXML private JFXButton gBut;
+	@FXML private JFXButton hBut;
+	@FXML private JFXButton iBut;
+	@FXML private JFXButton jBut;
+	@FXML private JFXButton kBut;
+	@FXML private JFXButton lBut;
+	@FXML private JFXButton mBut;
+	@FXML private JFXButton nBut;
+	@FXML private JFXButton oBut;
+	@FXML private JFXButton pBut;
+	@FXML private JFXButton qBut;
+	@FXML private JFXButton rBut;
+	@FXML private JFXButton sBut;
+	@FXML private JFXButton tBut;
+	@FXML private JFXButton uBut;
+	@FXML private JFXButton vBut;
+	@FXML private JFXButton wBut;
+	@FXML private JFXButton xBut;
+	@FXML private JFXButton yBut;
+	@FXML private JFXButton zBut;
+
+
+	private char[] currentWordArray;
 	private char[] toBeBlankArray;
 	private Scene minScene;
 	private Scene optionsScene;
@@ -52,7 +80,8 @@ public class HangmanController implements Initializable
 	private int failCounter = 1;
 	private Image imageObject;
 	private boolean isGameBeingPlayed;
-	
+	private boolean isFirstPlay = true;
+
 	@FXML
  	private void quitGame()
 	{
@@ -101,13 +130,12 @@ public class HangmanController implements Initializable
 
 	public void startButtonClicked(ActionEvent e)
 	{
-		((JFXButton) e.getSource()).setDisable(true);
-		((JFXButton) e.getSource()).getParent().setVisible(false);
-		//startButtonHBox.getChildren().remove(startButton);//to remove it
+
+		startButton.setVisible(false);
+		startButton.setDisable(true);
 		currentWord = GameLogic.getRandomWord();
 		toBeBlankArray = currentWord.toCharArray();
-//		wordToDisplay = GameLogic.randWordToHidden(currentWord);
-//		wordToGuess.setText(wordToDisplay);
+
 		for(int x = 0; x < toBeBlankArray.length; x++)
 		{
 			if(toBeBlankArray[x] != ' ')//ensures that spaces don't become underscores
@@ -115,13 +143,41 @@ public class HangmanController implements Initializable
 				toBeBlankArray[x] = '_';
 			}
 		}
-		
+
 		String wordToDisplay = new String(toBeBlankArray);//toBeBlankArray.toString(); wasn't working, so String Constructor
 		wordToGuess.setText(wordToDisplay);
 		isGameBeingPlayed = true;
-		
+		failCounter = 1;
 
+		imageObject = new Image("/ImageAssets/hangman1.png");
+		hangmanImage.setImage(imageObject);
 
+		aBut.setDisable(false);
+		bBut.setDisable(false);
+		cBut.setDisable(false);
+		dBut.setDisable(false);
+		eBut.setDisable(false);
+		fBut.setDisable(false);
+		gBut.setDisable(false);
+		hBut.setDisable(false);
+		iBut.setDisable(false);
+		jBut.setDisable(false);
+		kBut.setDisable(false);
+		lBut.setDisable(false);
+		mBut.setDisable(false);
+		nBut.setDisable(false);
+		oBut.setDisable(false);
+		pBut.setDisable(false);
+		qBut.setDisable(false);
+		rBut.setDisable(false);
+		sBut.setDisable(false);
+		tBut.setDisable(false);
+		uBut.setDisable(false);
+		vBut.setDisable(false);
+		wBut.setDisable(false);
+		xBut.setDisable(false);
+		yBut.setDisable(false);
+		zBut.setDisable(false);
 	}
 
 	public void keyboardAction(ActionEvent e) //every time a Letter is tried, this is fired
@@ -130,17 +186,17 @@ public class HangmanController implements Initializable
 		{
 			((JFXButton) e.getSource()).setDisable(true);//disables current button
 			mainSceneParent.requestFocus();//makes it so no button is focused after a selection is made
-	
+
 			String stringToConvert = ((JFXButton) e.getSource()).getText();
-	
+
 			char charToSend = stringToConvert.charAt(0);
-	
+
 			boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
-			
-			String upperCaseCurretWord = currentWord.toUpperCase();						
+
+			String upperCaseCurretWord = currentWord.toUpperCase();
 			currentWordArray = upperCaseCurretWord.toCharArray();
-			
-			
+
+
 			//takes the blanks and fills in the letter if guess was correct
 			for(int x = 0; x < isArrayRight.length; x++)
 			{
@@ -149,15 +205,21 @@ public class HangmanController implements Initializable
 					toBeBlankArray[x] = currentWordArray[x];
 				}
 			}
-			
+
 			String wordToShow = new String(toBeBlankArray);
 			wordToGuess.setText(wordToShow); //refreshes the JPanel holding the word to guess
-			
+
 			if((GameLogic.doesArrayContainATrue(isArrayRight)) == true)//if user guesses correctly
 			{
 				if((GameLogic.doesArrayContainUnderscores(toBeBlankArray)) == false)//user has won
 				{
-					//userWin Popup, prompt replay
+					isGameBeingPlayed = false;
+					startButton.setVisible(true);
+					startButton.setDisable(false);
+					startButton.setText("You Won!");
+					startButton.autosize();
+					isFirstPlay = false;
+					wordToGuess.setText(currentWord);
 				}
 			}
 			else//fires if they guessed wrong
@@ -167,9 +229,15 @@ public class HangmanController implements Initializable
 				if(failCounter == 7)//player loses
 				{
 					isGameBeingPlayed = false;
+					startButton.setVisible(true);
+					startButton.setDisable(false);
+					startButton.setText("Play Again");
+					isFirstPlay = false;
+					wordToGuess.setText(currentWord.toUpperCase());
+
 					//userLose Popup
 				}
-				
+
 				imageObject = new Image(whichHangmanPath);
 				hangmanImage.setImage(imageObject);
 	//			hangmanHolder.setIcon//updates image to add body part
