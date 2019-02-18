@@ -24,6 +24,7 @@ public class Main extends Application {
 
 	private double xOffset = 0;
 	private double yOffset = 0;
+	private String wordToDisplay;
 
 	/* (non-Javadoc)
 	 * @see javafx.application.Application#start(javafx.stage.Stage)
@@ -32,17 +33,15 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try
 		{
-			String currentWord = GameLogic.getRandomWord();
-			String wordToDisplay = GameLogic.randWordToHidden(currentWord);
-			
-			
-			
+//			String currentWord = GameLogic.getRandomWord();
+//			wordToDisplay = GameLogic.randWordToHidden(currentWord);
+
 			primaryStage.setAlwaysOnTop(true);
 
 			FXMLLoader root = new FXMLLoader(getClass().getResource("HangmanFile.fxml"));//
 		    Parent gameScenePane = root.load();//
 		    Scene gameScene = new Scene(gameScenePane);//
-		    
+
 		    FXMLLoader minPaneLoader = new FXMLLoader(getClass().getResource("HangmanMinimized.fxml"));//
 	        Parent minSceneLoader = minPaneLoader.load();//
 	        Scene minScene = new Scene(minSceneLoader);//
@@ -56,10 +55,11 @@ public class Main extends Application {
 	        rootPaneController.setMinScene(minScene);//
 	        rootPaneController.setOptionsScene(optionsScene);
 	        rootPaneController.setMainParent(gameScenePane);
-	        
+
 	        //adding the currentWord and setting word to display
-	        rootPaneController.setCurrentWord(currentWord);
-	        rootPaneController.setWordToDisplay(wordToDisplay);
+	        //System.out.println(currentWord);
+	        //rootPaneController.setCurrentWord(currentWord);
+	        //rootPaneController.setWordToDisplay(wordToDisplay);//now done on init
 
 	        // injecting main and opt scene into the controller of the min scene
 	        MinimizedController minPaneController = (MinimizedController) minPaneLoader.getController();//
@@ -123,6 +123,7 @@ public class Main extends Application {
 	                yOffset = event.getSceneY();
 	            }
 	        });
+
 	        minSceneLoader.setOnMouseDragged(new EventHandler<MouseEvent>()
 	        {
 	            @Override
@@ -170,7 +171,6 @@ public class Main extends Application {
 	        	primaryStage.setOpacity(1.0f);
 	        });
 
-
 		}
 		catch(Exception e)
 		{
@@ -182,4 +182,14 @@ public class Main extends Application {
 	{
 		launch(args);
 	}
+
+//	public String getWordToDisplay()
+//	{
+//		return wordToDisplay;
+//	}
+
+
+
+
+
 }
