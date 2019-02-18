@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
+<Pane prefHeight="669.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
    <children>
       <VBox prefHeight="622.0" prefWidth="384.0">
          <children>
@@ -131,7 +131,7 @@
                   </HBox>
                </children>
             </VBox>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>
@@ -409,13 +409,16 @@
                         <ImageView fx:id="hangmanImage" fitHeight="300.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true" translateY="10.0" BorderPane.alignment="CENTER">
                            <image>
                               <Image url="@../imageAssets/hangman1.png" />
-                           </image></ImageView>
+                           </image>
+                           <BorderPane.margin>
+                              <Insets bottom="5.0" />
+                           </BorderPane.margin></ImageView>
                      </center>
                      <bottom>
                         <HBox>
                            <children>
                               <Region HBox.hgrow="ALWAYS" />
-                              <Label fx:id="wordToGuess" prefHeight="57.0" text="Label" textFill="WHITE" BorderPane.alignment="CENTER">
+                              <Label fx:id="wordToGuess" prefHeight="57.0" textFill="WHITE" BorderPane.alignment="CENTER">
                                  <font>
                                     <Font name="System Bold" size="32.0" />
                                  </font>
@@ -429,6 +432,22 @@
                      </bottom>
                   </BorderPane>
                </center>
+               <top>
+                  <HBox fx:id="startButtonHBox" prefHeight="39.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <Region HBox.hgrow="ALWAYS" />
+                        <JFXButton fx:id="startButton" alignment="CENTER" onAction="#startButtonClicked" prefHeight="57.0" prefWidth="216.0" styleClass="startButton" stylesheets="@application.css" text="Start Game" textAlignment="CENTER" textFill="WHITE" translateY="210.0" BorderPane.alignment="CENTER">
+                           <font>
+                              <Font size="27.0" />
+                           </font>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </JFXButton>
+                        <Region HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+               </top>
             </BorderPane>
          </children>
       </VBox>
