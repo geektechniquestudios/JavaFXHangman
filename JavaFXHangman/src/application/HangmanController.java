@@ -34,28 +34,15 @@ import javafx.fxml.FXMLLoader;
 
 public class HangmanController implements Initializable
 {
-
-
 	@FXML private HBox topBox;
-
 	@FXML private ImageView hangmanImage;
-
 	@FXML private Label wordToGuess;
-
-
 
 	private Scene minScene;
 	private Scene optionsScene;
 	private Parent mainSceneParent;
-
-	private String currentWord;
+	public String currentWord;
 	private String wordToDisplay;
-
-//	@FXML
-//	private void setSceneOptions()
-//	{
-//		System.out.println("options works");
-//	}
 
 	@FXML
 	private void quitGame()
@@ -83,10 +70,11 @@ public class HangmanController implements Initializable
     	currentWord = currentWordtoUse;
     }
 
-    public void setWordToDisplay(String wordToSet)
-    {
-    	wordToDisplay = wordToSet;
-    }
+//    public void setWordToDisplay(String wordToSet)
+//    {
+//    	wordToDisplay = wordToSet;
+//    	System.out.println(wordToDisplay);
+//    }
 
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
@@ -102,13 +90,6 @@ public class HangmanController implements Initializable
         optionsScene.getRoot().requestFocus();
     }
 
-//	public String setCurrentWord()
-//	{
-//
-//
-//		return RandomWord;
-//	}
-
 	public void keyboardAction(ActionEvent e) //every time a Letter is tried, this is fired
 	{
 		((JFXButton) e.getSource()).setDisable(true);//disables current button
@@ -116,19 +97,18 @@ public class HangmanController implements Initializable
 
 		String stringToConvert = ((JFXButton) e.getSource()).getText();
 
-
 		char charToSend = stringToConvert.charAt(0);
 
 		boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
-
-
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)
 	{
+		
+		//System.out.println(wordToDisplay);
+		currentWord = GameLogic.getRandomWord();
+		wordToDisplay = GameLogic.randWordToHidden(currentWord);
 		wordToGuess.setText(wordToDisplay);
 	}
-
-
 }
