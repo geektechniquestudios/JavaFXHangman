@@ -8,15 +8,19 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
@@ -28,14 +32,15 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
 
-public class HangmanController
+public class HangmanController implements Initializable
 {
 
-	@FXML
-	private HBox topBox;
 
-	@FXML
-	private ImageView hangmanImage;
+	@FXML private HBox topBox;
+
+	@FXML private ImageView hangmanImage;
+
+	@FXML private Label wordToGuess;
 
 
 
@@ -44,6 +49,7 @@ public class HangmanController
 	private Parent mainSceneParent;
 
 	private String currentWord;
+	private String wordToDisplay;
 
 //	@FXML
 //	private void setSceneOptions()
@@ -72,6 +78,16 @@ public class HangmanController
     	mainSceneParent = someSceneParent;
     }
 
+    public void setCurrentWord(String currentWordtoUse)
+    {
+    	currentWord = currentWordtoUse;
+    }
+
+    public void setWordToDisplay(String wordToSet)
+    {
+    	wordToDisplay = wordToSet;
+    }
+
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
         Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -98,13 +114,20 @@ public class HangmanController
 		((JFXButton) e.getSource()).setDisable(true);//disables current button
 		mainSceneParent.requestFocus();//makes it so no button is focused after a selection is made
 
-//		String stringToConvert = ((JFXButton) e.getSource()).getText();
-//
-//
-//		char charToSend = stringToConvert.charAt(0);
-//
-//		boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
+		String stringToConvert = ((JFXButton) e.getSource()).getText();
 
+
+		char charToSend = stringToConvert.charAt(0);
+
+		boolean[] isArrayRight = GameLogic.checkArrayForMatches(currentWord, charToSend);
+
+
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1)
+	{
+		wordToGuess.setText(wordToDisplay);
 	}
 
 

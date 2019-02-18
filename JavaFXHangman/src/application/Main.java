@@ -1,5 +1,6 @@
 package application;
 
+import gameLogic.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -31,6 +32,11 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		try
 		{
+			String currentWord = GameLogic.getRandomWord();
+			String wordToDisplay = GameLogic.randWordToHidden(currentWord);
+			
+			
+			
 			primaryStage.setAlwaysOnTop(true);
 
 			FXMLLoader root = new FXMLLoader(getClass().getResource("HangmanFile.fxml"));//
@@ -50,6 +56,10 @@ public class Main extends Application {
 	        rootPaneController.setMinScene(minScene);//
 	        rootPaneController.setOptionsScene(optionsScene);
 	        rootPaneController.setMainParent(gameScenePane);
+	        
+	        //adding the currentWord and setting word to display
+	        rootPaneController.setCurrentWord(currentWord);
+	        rootPaneController.setWordToDisplay(wordToDisplay);
 
 	        // injecting main and opt scene into the controller of the min scene
 	        MinimizedController minPaneController = (MinimizedController) minPaneLoader.getController();//

@@ -22,6 +22,20 @@ public class GameLogic
 		
 	}
 	
+	public static String randWordToHidden(String currentWord)
+    {
+    	char[] toBeBlankArray = currentWord.toCharArray();
+		for(int x = 0; x < toBeBlankArray.length; x++)
+		{
+			if(toBeBlankArray[x] != ' ')//ensures that spaces don't become underscores
+			{
+				toBeBlankArray[x] = '_';
+			}
+		}
+		
+		return new String(toBeBlankArray);
+    }
+	
 	public static boolean[] checkArrayForMatches(String currentWord, char charToTest)//generates a boolean array in response to the user's guess against the current word
 	{
 		String upperCaseCurretWord = currentWord.toUpperCase();

@@ -412,14 +412,20 @@
                            </image></ImageView>
                      </center>
                      <bottom>
-                        <Label prefHeight="46.0" prefWidth="80.0" text="Label" textFill="WHITE" BorderPane.alignment="CENTER">
-                           <font>
-                              <Font name="System Bold" size="32.0" />
-                           </font>
-                           <padding>
-                              <Insets bottom="10.0" />
-                           </padding>
-                        </Label>
+                        <HBox>
+                           <children>
+                              <Region HBox.hgrow="ALWAYS" />
+                              <Label fx:id="wordToGuess" prefHeight="57.0" text="Label" textFill="WHITE" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="32.0" />
+                                 </font>
+                                 <padding>
+                                    <Insets bottom="10.0" />
+                                 </padding>
+                              </Label>
+                              <Region HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
                      </bottom>
                   </BorderPane>
                </center>
