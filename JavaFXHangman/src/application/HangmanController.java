@@ -217,9 +217,9 @@ public class HangmanController implements Initializable
 					startButton.setVisible(true);
 					startButton.setDisable(false);
 					startButton.setText("You Won!");
-					startButton.autosize();
+					startButton.setTranslateY(185.0);
 					isFirstPlay = false;
-					wordToGuess.setText(currentWord);
+					wordToGuess.setText(currentWord.toUpperCase());
 				}
 			}
 			else//fires if they guessed wrong
@@ -232,6 +232,7 @@ public class HangmanController implements Initializable
 					startButton.setVisible(true);
 					startButton.setDisable(false);
 					startButton.setText("Play Again");
+					startButton.setTranslateY(185.0);
 					isFirstPlay = false;
 					wordToGuess.setText(currentWord.toUpperCase());
 

@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<Pane prefHeight="669.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
+<Pane prefHeight="623.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.HangmanController">
    <children>
       <VBox prefHeight="622.0" prefWidth="384.0">
          <children>
@@ -131,7 +131,7 @@
                   </HBox>
                </children>
             </VBox>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="588.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>
@@ -412,7 +412,7 @@
                               <Region HBox.hgrow="ALWAYS" />
                               <Label fx:id="wordToGuess" prefHeight="57.0" textFill="WHITE" BorderPane.alignment="CENTER">
                                  <font>
-                                    <Font name="System Bold" size="32.0" />
+                                    <Font name="Baskerville Old Face" size="30.0" />
                                  </font>
                                  <padding>
                                     <Insets bottom="10.0" />
@@ -428,7 +428,7 @@
                   <HBox fx:id="startButtonHBox" prefHeight="39.0" BorderPane.alignment="CENTER">
                      <children>
                         <Region HBox.hgrow="ALWAYS" />
-                        <JFXButton fx:id="startButton" alignment="CENTER" onAction="#startButtonClicked" prefHeight="57.0" prefWidth="216.0" styleClass="startButton" stylesheets="@application.css" text="Start Game" textAlignment="CENTER" textFill="WHITE" translateY="210.0" BorderPane.alignment="CENTER">
+                        <JFXButton fx:id="startButton" alignment="CENTER" onAction="#startButtonClicked" prefHeight="57.0" prefWidth="216.0" styleClass="startButton" stylesheets="@application.css" text="Start Game" textAlignment="CENTER" textFill="WHITE" translateY="105.0" BorderPane.alignment="CENTER">
                            <font>
                               <Font size="27.0" />
                            </font>
