@@ -13,6 +13,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 
+import fileIO.FileInstantiation;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -133,6 +134,7 @@ public class HangmanController implements Initializable
 
 		startButton.setVisible(false);
 		startButton.setDisable(true);
+		FileInstantiation.setWordList("WordBank.txt");///////////////////////////////
 		currentWord = GameLogic.getRandomWord();
 		toBeBlankArray = currentWord.toCharArray();
 
