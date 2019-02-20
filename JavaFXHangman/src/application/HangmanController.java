@@ -34,7 +34,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.Pane;
 import javafx.fxml.FXMLLoader;
 
-public class HangmanController implements Initializable
+public class HangmanController
 {
 	@FXML private HBox topBox;
 	@FXML private ImageView hangmanImage;
@@ -108,12 +108,6 @@ public class HangmanController implements Initializable
     {
     	currentWord = currentWordtoUse;
     }
-
-//    public void setWordToDisplay(String wordToSet)
-//    {
-//    	wordToDisplay = wordToSet;
-//    	System.out.println(wordToDisplay);
-//    }
 
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
@@ -201,7 +195,7 @@ public class HangmanController implements Initializable
 	{
 		if(isGameBeingPlayed == true)
 		{
-			((JFXButton) e.getSource()).setDisable(true);//disables current button
+			((JFXButton) e.getSource()).setDisable(true);//disables button that was just clicked
 			mainSceneParent.requestFocus();//makes it so no button is focused after a selection is made
 
 			String stringToConvert = ((JFXButton) e.getSource()).getText();
@@ -252,27 +246,11 @@ public class HangmanController implements Initializable
 					startButton.setTranslateY(185.0);
 					isFirstPlay = false;
 					wordToGuess.setText(currentWord.toUpperCase());
-
-					//userLose Popup
 				}
 
 				imageObject = new Image(whichHangmanPath);
 				hangmanImage.setImage(imageObject);
-	//			hangmanHolder.setIcon//updates image to add body part
-	//			(
-	//				new ImageIcon(getClass().getResource(whichHangmanPath))
-	//			);
 			}
 		}
-	}
-
-	@Override
-	public void initialize(URL arg0, ResourceBundle arg1)
-	{
-
-		//System.out.println(wordToDisplay);
-//		currentWord = GameLogic.getRandomWord();
-//		wordToDisplay = GameLogic.randWordToHidden(currentWord);
-//		wordToGuess.setText(wordToDisplay);//do this on start click
 	}
 }

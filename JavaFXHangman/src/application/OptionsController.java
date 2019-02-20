@@ -24,6 +24,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Tooltip;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -105,31 +106,37 @@ public class OptionsController implements Initializable
 
 	public void addWordWasHit(ActionEvent e)
 	{
+	
+
 		if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 		{
-			
+			addWordField.setText("");
+			addWordField.setPromptText("letters only");
 		}
-		else if(addWordField.getText().length() > 15)
+		else if(addWordField.getText().length() > 17)
 		{
-		
+			addWordField.setText("");
+			addWordField.setPromptText("too long");
 		}
 			//if it dosn't contain letters
 		else if((!(addWordField.getText().matches("[a-zA-Z].*"))))
 		{
-		
+			addWordField.setText("");
+			addWordField.setPromptText("start with a letter");
 		}
 		else if(FileInstantiation.getRandomWordArrList().contains(addWordField.getText()))
-		{
-		
+		{	
+			addWordField.setText("");
+			addWordField.setPromptText("already in list");
 		}
 		else
 		{
 			FileInstantiation.writeNewWord(addWordField.getText());
 			addWordField.setText("");
+			addWordField.setPromptText("next word?");
 			someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
 			wordBank.setItems(someListView);
-		}
-		
+		}	
 	}
 
 	public void deleteWordWasHit(ActionEvent e)
@@ -155,6 +162,10 @@ public class OptionsController implements Initializable
 	{
 		boolean isToggleOn = FileInstantiation.getToggleState();
 		String whichWordList;
+		
+		Tooltip toggleTip = new Tooltip("Make your own dictionary, or use a default set of words.");
+		toggleDict.setTooltip(toggleTip);
+		
 		toggleDict.setSelected(isToggleOn);//fetches memory state for toggle button
 		addWordButton.setDisable(!(isToggleOn));//these disable buttons if the toggle state is off
 		deleteWordButton.setDisable(!(isToggleOn));

@@ -12,7 +12,7 @@ public class FileInstantiation
 	{
 		wordListType = whichWordList;
 	}
-
+	
 	public static void writeNewWord(String wordToAdd)
 	{
 		FileManagement someFileManagement = new FileManagement();
