@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class FileInstantiation
 {
-	FileManagement someFileManagement;
+	FileManagement someFileManagement;//prob not going to use
 	private static String wordListType;
 
 	public static void setWordList(String whichWordList)
@@ -27,7 +27,7 @@ public class FileInstantiation
 		ArrayList<String> arrayListToReturn = someFileManagement.readFile();
 		someFileManagement.closeFile();
 
-			return arrayListToReturn;
+		return arrayListToReturn;
 	}
 
 	public static void deleteSomeWord(int indexOfWordToDelete)
