@@ -92,18 +92,14 @@ public class OptionsController implements Initializable
 		
 		if(isToggleEnabled)
 		{
-//			addWordButton.setDisable(false);
-//			deleteWordButton.setDisable(false);
 			wordToSend = "WordBank.txt";
 		}
 		else
 		{
-//			addWordButton.setDisable(true);
-//			deleteWordButton.setDisable(true);
 			wordToSend = "DefaultDictionary.txt";
 		}
 
-		FileInstantiation.setWordList(wordToSend);//which wordlist should
+		FileInstantiation.setWordList(wordToSend);//which wordlist to use
 		FileInstantiation.setToggleState(isToggleEnabled);
 	}
 

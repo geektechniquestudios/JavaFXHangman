@@ -131,10 +131,25 @@ public class HangmanController implements Initializable
 
 	public void startButtonClicked(ActionEvent e)
 	{
-
+		String whichDictToUse;
+		
 		startButton.setVisible(false);
 		startButton.setDisable(true);
-		FileInstantiation.setWordList("WordBank.txt");///////////////////////////////
+		
+		//reads current toggle state, and get's appropriate dictionary.
+		boolean isDictionaryCustom = FileInstantiation.getToggleState();
+		if(isDictionaryCustom)
+		{
+			whichDictToUse = "WordBank.txt";
+		}
+		else
+		{
+			whichDictToUse = "DefaultDictionary.txt";
+		}
+		
+		FileInstantiation.setWordList(whichDictToUse);
+		
+		
 		currentWord = GameLogic.getRandomWord();
 		toBeBlankArray = currentWord.toCharArray();
 
