@@ -43,3 +43,23 @@
 {
 	-fx-background-color:rgb(0,128,255);
 }
+
+.wordBank-cell
+{
+	-fx-font-size: 15em;
+}
+
+.wordBank-cell:hover
+{
+	-fx-background-color: #77C2BB;
+}
+
+.wordBank-cell:even
+{
+	-fx-background-color:rgb(192,192,192)
+}
+
+.wordBank-cell:odd
+{
+	-fx-background-color:rgb(128,128,128)
+}

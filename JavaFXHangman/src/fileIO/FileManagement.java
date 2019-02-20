@@ -6,11 +6,23 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class FileManagement 
+public class FileManagement
 {
 	private Scanner someScanner;
-	
-	public void openFile()
+	private String wordListToUse;
+	private String toggleState;
+
+	public void setWordList(String whichWordList)
+	{
+		wordListToUse = whichWordList;
+	}
+
+	public void setToggleState(String whichToggleState)
+	{
+		toggleState = whichToggleState;
+	}
+
+	public void openMemoryFile()
 	{
 		try
 		{
@@ -18,7 +30,8 @@ public class FileManagement
 				(
 					new File
 					(
-						"WordBank.txt"
+						"StateMemory.txt"
+						//"WordBank.txt"
 						//System.getProperty("user.dir") + "/WordBank.txt"
 					)
 				);
@@ -28,7 +41,53 @@ public class FileManagement
 			System.out.println("Something went wrong!");
 		}
 	}
-	
+
+	public String readMemoryFile()
+	{
+		return someScanner.nextLine();
+	}
+
+	public void writeToMemoryFile(String currentStateToggle)
+	{
+		try
+		{
+			BufferedWriter someWriter = new BufferedWriter
+				(
+					new FileWriter
+						(
+							"StateMemory.txt", false
+						)
+				);
+			someWriter.write(toggleState);
+			someWriter.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println("Something went wrong!");
+		}
+	}
+
+	public void openFile()
+	{
+		//if CustDict toggled do this, else, change wordbank to DefDict
+		try
+		{
+			someScanner = new Scanner
+				(
+					new File
+					(
+						wordListToUse
+						//"WordBank.txt"
+						//System.getProperty("user.dir") + "/WordBank.txt"
+					)
+				);
+		}
+		catch(Exception e)
+		{
+			System.out.println("Something went wrong!");
+		}
+	}
+
 	public ArrayList<String> readFile()
 	{
 //		while(someScanner.hasNext())
@@ -36,21 +95,21 @@ public class FileManagement
 //			String a = someScanner.nextLine();
 //			//System.out.println(a);
 //		}
-		
+
 		ArrayList<String> someList = new ArrayList<String>();
 		while (someScanner.hasNext())
 		{
-		    someList.add(someScanner.nextLine());    
+		    someList.add(someScanner.nextLine());
 		}
-		
+
 		return someList;
 	}
-	
+
 	public void closeFile()
 	{
 		someScanner.close();
 	}
-	
+
 	public void writeToFile(String newWord)
 	{
 		try
@@ -70,7 +129,7 @@ public class FileManagement
 			System.out.println("Something went wrong!");
 		}
 	}
-	
+
 	public void writeCleanToFile(ArrayList<String> updatedFile)
 	{
 		try
@@ -82,7 +141,7 @@ public class FileManagement
 							"WordBank.txt", false
 						)
 				);
-	
+
 			boolean firstRun = true;
 			for (String x: updatedFile)
 			{

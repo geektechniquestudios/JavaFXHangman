@@ -145,21 +145,21 @@
                <left>
                   <AnchorPane prefHeight="227.0" prefWidth="400.0" BorderPane.alignment="CENTER">
                      <children>
-                        <JFXButton buttonType="RAISED" defaultButton="true" layoutX="39.0" layoutY="135.0" prefHeight="38.0" prefWidth="120.0" styleClass="optionsButtons" stylesheets="@application.css" text="Add Word" textFill="WHITE">
+                        <JFXButton fx:id="addWordButton" buttonType="RAISED" defaultButton="true" layoutX="39.0" layoutY="135.0" onAction="#addWordWasHit" prefHeight="38.0" prefWidth="120.0" styleClass="optionsButtons" stylesheets="@application.css" text="Add Word" textFill="WHITE">
                            <font>
                               <Font size="17.0" />
                            </font></JFXButton>
-                        <JFXButton buttonType="RAISED" layoutX="39.0" layoutY="194.0" prefHeight="38.0" prefWidth="120.0" styleClass="optionsButtons" stylesheets="@application.css" text="Delete Word" textFill="WHITE">
+                        <JFXButton fx:id="deleteWordButton" buttonType="RAISED" layoutX="39.0" layoutY="194.0" onAction="#deleteWordWasHit" prefHeight="38.0" prefWidth="120.0" styleClass="optionsButtons" stylesheets="@application.css" text="Delete Word" textFill="WHITE">
                            <font>
                               <Font size="17.0" />
                            </font></JFXButton>
-                        <JFXTextField focusColor="#a4adc6" layoutX="188.0" layoutY="135.0" prefHeight="37.0" prefWidth="176.0" promptText=" enter a word" style="-fx-background-color: gray;">
+                        <JFXTextField fx:id="addWordField" focusColor="#a4adc6" layoutX="188.0" layoutY="135.0" prefHeight="37.0" prefWidth="176.0" promptText=" enter a word" style="-fx-background-color: lightgray;">
                            <font>
-                              <Font size="16.0" />
+                              <Font size="17.0" />
                            </font>
                         </JFXTextField>
-                        <JFXListView layoutX="188.0" layoutY="194.0" prefHeight="163.0" prefWidth="176.0" />
-                        <JFXToggleButton layoutX="39.0" layoutY="32.0" prefHeight="74.0" prefWidth="324.0" size="12.0" text="Custom Dictionary" textFill="WHITE">
+                        <JFXListView id="wordBank" fx:id="wordBank" layoutX="188.0" layoutY="194.0" prefHeight="163.0" prefWidth="176.0" styleClass="wordBank-cell" stylesheets="@application.css" verticalGap="1.0" />
+                        <JFXToggleButton fx:id="toggleDict" layoutX="39.0" layoutY="32.0" onAction="#toggleWasChanged" prefHeight="74.0" prefWidth="324.0" selected="true" size="12.0" text="Custom Dictionary" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
                            </font>
