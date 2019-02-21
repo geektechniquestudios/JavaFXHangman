@@ -141,21 +141,28 @@ public class OptionsController implements Initializable
 
 	public void deleteWordWasHit(ActionEvent e)
 	{
-		try
+		if(FileInstantiation.getRandomWordArrList().toArray().length == 1)
 		{
-			int someIndex = wordBank.getSelectionModel().getSelectedIndex();
-			//String stringToDelete = (String) wordBank.getSelectedValue();
-			FileInstantiation.deleteSomeWord(someIndex);
-			someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
-			wordBank.setItems(someListView);
-			
+			addWordField.setPromptText("can't delete last word");
 		}
-		catch(Exception d)
+		else
 		{
-			
+			try
+			{
+				int someIndex = wordBank.getSelectionModel().getSelectedIndex();
+				FileInstantiation.deleteSomeWord(someIndex);
+				
+				someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
+				wordBank.setItems(someListView);
+				
+			}
+			catch(Exception d)
+			{
+				//System.out.println("should fire");
+			}
+			//someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
+			//wordBank.setItems(someListView);
 		}
-		//someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
-		//wordBank.setItems(someListView);
 	}
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1)
@@ -172,6 +179,12 @@ public class OptionsController implements Initializable
 		addWordField.setDisable(!(isToggleOn));
 		wordBank.setDisable(!(isToggleOn));
 
+
+		FileInstantiation.setWordList("WordBank.txt");//when the toggle switches, update setWordList
+
+		someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
+		wordBank.setItems(someListView);//list populates
+		
 		if(isToggleOn)
 		{
 			whichWordList = "WordBank.txt";
@@ -180,11 +193,6 @@ public class OptionsController implements Initializable
 		{
 			whichWordList = "DefaultDictionary.txt";
 		}
-		FileInstantiation.setWordList(whichWordList);//when the toggle switches, update setWordList
-
-		someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
-		wordBank.setItems(someListView);//list populates
-
 
 	}
 }

@@ -27,14 +27,14 @@ public class FileManagement
 		try
 		{
 			someScanner = new Scanner
+			(
+				new File
 				(
-					new File
-					(
-						"StateMemory.txt"
-						//"WordBank.txt"
-						//System.getProperty("user.dir") + "/WordBank.txt"
-					)
-				);
+					"StateMemory.txt"
+					//"WordBank.txt"
+					//System.getProperty("user.dir") + "/WordBank.txt"
+				)
+			);
 		}
 		catch(Exception e)
 		{
