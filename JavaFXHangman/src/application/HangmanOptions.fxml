@@ -158,7 +158,7 @@
                               <Font size="17.0" />
                            </font>
                         </JFXTextField>
-                        <JFXListView id="wordBank" fx:id="wordBank" layoutX="188.0" layoutY="194.0" prefHeight="163.0" prefWidth="176.0" stylesheets="@application.css" verticalGap="1.0" />
+                        <JFXListView fx:id="wordBank" editable="true" layoutX="188.0" layoutY="194.0" prefHeight="163.0" prefWidth="176.0" stylesheets="@application.css" verticalGap="1.0" />
                         <JFXToggleButton fx:id="toggleDict" layoutX="39.0" layoutY="32.0" onAction="#toggleWasChanged" prefHeight="74.0" prefWidth="324.0" selected="true" size="12.0" text="Custom Dictionary" textFill="WHITE">
                            <font>
                               <Font size="20.0" />
