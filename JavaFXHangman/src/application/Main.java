@@ -1,23 +1,13 @@
 package application;
 
-import gameLogic.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
-import javafx.application.Application;
-import javafx.stage.StageStyle;
-import javafx.scene.Scene;
-
-import javafx.scene.layout.Pane;
-
-import javafx.fxml.FXMLLoader;
 
 
 public class Main extends Application {
@@ -42,7 +32,7 @@ public class Main extends Application {
 		    FXMLLoader minPaneLoader = new FXMLLoader(getClass().getResource("HangmanMinimized.fxml"));
 	        Parent minSceneLoader = minPaneLoader.load();
 	        Scene minScene = new Scene(minSceneLoader);
-
+	        
 	        FXMLLoader optionsPaneLoader = new FXMLLoader(getClass().getResource("HangmanOptions.fxml"));
 	        Parent optionsSceneLoader = optionsPaneLoader.load();
 	        Scene optionsScene = new Scene(optionsSceneLoader);
@@ -57,12 +47,20 @@ public class Main extends Application {
 	        MinimizedController minPaneController = (MinimizedController) minPaneLoader.getController();//
 	        minPaneController.setMainScene(gameScene);
 	        minPaneController.setOptionsScene(optionsScene);
-
+        
 	        // references for main and min scene into the controller of the options scene
 	        OptionsController optionsPaneController = (OptionsController) optionsPaneLoader.getController();//
 	        optionsPaneController.setMainScene(gameScene);
 	        optionsPaneController.setMinScene(minScene);
-
+	        
+	        // references for controllers
+	        optionsPaneController.setRootPaneController(rootPaneController);
+	        optionsPaneController.setMinPaneController(minPaneController);
+	        minPaneController.setRootPaneController(rootPaneController);
+	        minPaneController.setOptionsPaneController(optionsPaneController);
+	        rootPaneController.setMinPaneController(minPaneController);
+	        rootPaneController.setOptionsPaneController(optionsPaneController);
+	        
 			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window dressing
 
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());

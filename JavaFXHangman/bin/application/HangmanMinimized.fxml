@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<Pane prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MinimizedController">
+   <children>
+      <VBox>
+         <children>
+            <HBox fx:id="topBox" prefHeight="69.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton onAction="#openGameScene" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/play.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.48333333333333334" centerY="0.5285714285714286" cycleMethod="REFLECT" focusAngle="-144.46" focusDistance="-0.04651162790697683" radius="0.3372093023255814">
+                           <stops>
+                              <Stop color="#5bd9ff" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton onAction="#openOptionsScene" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/settings.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.48333333333333334" centerY="0.5285714285714286" cycleMethod="REFLECT" focusAngle="-144.46" focusDistance="-0.04651162790697683" radius="0.3372093023255814">
+                           <stops>
+                              <Stop color="#5bd9ff" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton onAction="#minimizeScene" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/min.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.48333333333333334" centerY="0.5285714285714286" cycleMethod="REFLECT" focusAngle="-144.46" focusDistance="-0.04651162790697683" radius="0.3372093023255814">
+                           <stops>
+                              <Stop color="#5bd9ff" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+                  <JFXButton onMouseClicked="#quitGame" styleClass="buttons" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView onMouseClicked="#quitGame" pickOnBounds="true" preserveRatio="true" scaleX="0.5" scaleY="0.5">
+                           <image>
+                              <Image url="@../images/x.png" />
+                           </image>
+                           <effect>
+                              <Bloom />
+                           </effect>
+                        </ImageView>
+                     </graphic>
+                     <ripplerFill>
+                        <RadialGradient centerX="0.48333333333333334" centerY="0.5285714285714286" cycleMethod="REFLECT" focusAngle="-144.46" focusDistance="-0.04651162790697683" radius="0.3372093023255814">
+                           <stops>
+                              <Stop color="#5bd9ff" />
+                              <Stop color="WHITE" offset="1.0" />
+                           </stops>
+                        </RadialGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <Region prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+   <effect>
+      <Lighting>
+         <bumpInput>
+            <Shadow />
+         </bumpInput>
+         <light>
+            <Light.Distant />
+         </light>
+      </Lighting>
+   </effect>
+</Pane>
