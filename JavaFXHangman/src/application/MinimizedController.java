@@ -4,41 +4,19 @@ import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.layout.HBox;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
-import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
-import javafx.application.Application;
-import javafx.stage.StageStyle;
-import javafx.scene.Scene;
-
-import javafx.scene.layout.Pane;
-
-import javafx.fxml.FXMLLoader;
-
-public class MinimizedController {
-
+public class MinimizedController 
+{
 	@FXML
 	private HBox topBox;
 	private Scene optionsScene;
     private Scene mainScene;
-
-    @FXML
-    private void setSceneOptions()
-    {
-
-    }
+    private Stage primaryStage;
+    
+    HangmanController mainController;
+    OptionsController optionsController;
 
     @FXML
 	private void quitGame()
@@ -58,22 +36,35 @@ public class MinimizedController {
 
     public void openGameScene(ActionEvent actionEvent)
     {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+    	mainController.setArrowVisible();
+    	mainController.playFadeIn();
+        primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         primaryStage.setScene(mainScene);
         mainScene.getRoot().requestFocus();
     }
 
     public void openOptionsScene(ActionEvent actionEvent) //throws IOException
     {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+    	optionsController.setArrowVisible();
+    	optionsController.playFadeIn();
+        primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         primaryStage.setScene(optionsScene);
-        optionsScene.getRoot().requestFocus();
+        optionsScene.getRoot().requestFocus();    
     }
 
     public void minimizeScene(ActionEvent actionEvent)
     {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+        primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         primaryStage.setIconified(true);
     }
-
+    
+    public void setRootPaneController(HangmanController someHangmanController)
+    {
+    	mainController = someHangmanController;
+    }
+    
+    public void setOptionsPaneController(OptionsController someOptionsController)
+    {
+    	optionsController = someOptionsController;
+    }
 }

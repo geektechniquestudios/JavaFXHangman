@@ -118,7 +118,7 @@
                   <HBox prefHeight="32.0" prefWidth="400.0" VBox.vgrow="NEVER">
                      <children>
                         <Region HBox.hgrow="ALWAYS" />
-                        <ImageView fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-28.0" translateY="3.0">
+                        <ImageView fx:id="arrow" fitHeight="10.0" pickOnBounds="true" preserveRatio="true" scaleZ="0.0" translateX="-28.0" translateY="3.0">
                            <image>
                               <Image url="@../images/upArrow.png" />
                            </image>
@@ -131,7 +131,7 @@
                   </HBox>
                </children>
             </VBox>
-            <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
+            <BorderPane fx:id="mainBox" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="400.0" style="-fx-background-color: #3D4956;">
                <bottom>
                   <VBox BorderPane.alignment="CENTER">
                      <children>

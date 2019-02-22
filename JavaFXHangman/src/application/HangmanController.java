@@ -1,22 +1,16 @@
 package application;
 
 import gameLogic.*;
-
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
-
+import animations.FadeInDown;
+import animations.FadeOutUp;
 import fileIO.FileInstantiation;
-import javafx.application.Application;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -24,23 +18,17 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-import javafx.application.Application;
-import javafx.stage.StageStyle;
-import javafx.scene.Scene;
-import javafx.scene.layout.Pane;
-import javafx.fxml.FXMLLoader;
 
-public class HangmanController
+public class HangmanController implements Initializable
 {
 	@FXML private HBox topBox;
 	@FXML private ImageView hangmanImage;
 	@FXML private Label wordToGuess;
 	@FXML private JFXButton startButton;
 	@FXML private HBox startButtonHBox;
+	@FXML private BorderPane mainBox;
+	@FXML private ImageView arrow;
 
 	@FXML private JFXButton aBut;
 	@FXML private JFXButton bBut;
@@ -69,24 +57,34 @@ public class HangmanController
 	@FXML private JFXButton yBut;
 	@FXML private JFXButton zBut;
 
-
 	private char[] currentWordArray;
 	private char[] toBeBlankArray;
 	private Scene minScene;
 	private Scene optionsScene;
 	private Parent mainSceneParent;
 	private String currentWord;
-	private String wordToDisplay;
+	private String wordToDisplay; //def is used | ignore warning
 	private String whichHangmanPath;
 	private int failCounter = 1;
 	private Image imageObject;
 	private boolean isGameBeingPlayed;
-	private boolean isFirstPlay = true;
+	private boolean isFirstPlay = true; //def is used | ignore warning
+	private boolean hasAnimationStarted = false;
+	private Stage primaryStage;
+	
+	MinimizedController minController;
+	OptionsController optionsController;
+	BorderPane optMainBox;
 
 	@FXML
  	private void quitGame()
 	{
 		System.exit(0);
+	}
+	
+	public void setArrowVisible()
+	{
+		arrow.setVisible(true);
 	}
 
     public void setMinScene(Scene scene)
@@ -111,14 +109,18 @@ public class HangmanController
 
     public void openGameScene(ActionEvent actionEvent) //throws IOException
     {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-        primaryStage.setScene(minScene);
-        minScene.getRoot().requestFocus();
+    	if(hasAnimationStarted == false)
+		{
+			playFadeOut(actionEvent, minScene);
+		}
+		hasAnimationStarted = true;
     }
 
 	public void openOptionsScene(ActionEvent actionEvent) //throws IOException
     {
-        Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		optionsController.setArrowVisible();
+		optionsController.playFadeIn();
+        primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         primaryStage.setScene(optionsScene);
         optionsScene.getRoot().requestFocus();
     }
@@ -126,10 +128,10 @@ public class HangmanController
 	public void startButtonClicked(ActionEvent e)
 	{
 		String whichDictToUse;
-		
+
 		startButton.setVisible(false);
 		startButton.setDisable(true);
-		
+
 		//reads current toggle state, and get's appropriate dictionary.
 		boolean isDictionaryCustom = FileInstantiation.getToggleState();
 		if(isDictionaryCustom)
@@ -140,10 +142,10 @@ public class HangmanController
 		{
 			whichDictToUse = "DefaultDictionary.txt";
 		}
-		
+
 		FileInstantiation.setWordList(whichDictToUse);
-		
-		
+
+
 		currentWord = GameLogic.getRandomWord();
 		toBeBlankArray = currentWord.toCharArray();
 
@@ -252,5 +254,51 @@ public class HangmanController
 				hangmanImage.setImage(imageObject);
 			}
 		}
+	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		playFadeIn();
+	}
+	
+	public void setMinPaneController(MinimizedController someMinController)
+	{
+		minController = someMinController;
+	}
+	
+	public void setOptionsPaneController(OptionsController someOptionsController)
+	{
+		optionsController = someOptionsController;
+	}
+	
+	public void playFadeIn()
+	{
+		new FadeInDown(mainBox).play();	
+	}
+	
+	public void optToMainTransition()
+	{
+		new FadeOutUp(optMainBox).playOnFinished(new FadeInDown(mainBox));
+	}
+	
+	public void playFadeOut(ActionEvent actionEvent, Scene someScene)
+	{
+		arrow.setVisible(false);
+		FadeOutUp someFadeOut = new FadeOutUp(mainBox);
+		
+		someFadeOut.setOnFinished(event -> 
+		{
+		    someScene.getRoot().requestFocus();
+			primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		    primaryStage.setScene(someScene);
+		    hasAnimationStarted = false;
+		});
+		
+		someFadeOut.play();
+	}
+	
+	public void setOptMainBox(BorderPane someOptMainBox)
+	{
+		optMainBox = someOptMainBox;
 	}
 }

@@ -1,8 +1,8 @@
 .root
 {
 	-fx-background-color: transparent;
-	-fx-selection-bar: red;/////////////////////////////////
 }
+
 
 .buttons
 {
@@ -46,30 +46,41 @@
 {
 	-fx-background-color:rgb(0,128,255);
 }
-
+/* 
 .list-view .list-cell
 {
-	-fx-font-size: 1.3em;
-	-fx-text-fill: white;
-	/*-fx-control-inner-background: black;*/
+	-fx-font-size: 1.5em;
+	-fx-text-fill:green;
+	/*-fx-control-inner-background: black;
+}
+*/
+.list-view
+{
+	-fx-background-radius: 1em;
 }
 
 .list-view .list-cell:even
 {
 	-fx-background-color: #009688;
+	-fx-font-size: 1.5em;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
 
 .list-view .list-cell:odd
 {
 	-fx-background-color: #77c2bb;
+	-fx-font-size: 1.5em;
+	-fx-text-fill: white;
+	-fx-font-weight: bold;
 }
 
-.list-view
-{
-	-fx-background-color:  #3D4956;
-	-fx-selection-bar: green;
+.list-view:focused .list-cell:filled:focused:selected {
+    -fx-background-color:  #3D4956;
+    -fx-background-insets: 0, 1, 2;
+    -fx-background: -fx-accent;
+    -fx-text-fill: white;
 }
-
 
 
 

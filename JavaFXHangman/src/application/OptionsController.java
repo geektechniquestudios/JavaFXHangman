@@ -2,41 +2,25 @@ package application;
 
 import fileIO.*;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
-
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXListView;
 import com.jfoenix.controls.JFXTextField;
 import com.jfoenix.controls.JFXToggleButton;
-
-import javafx.application.Application;
+import animations.FadeInDown;
+import animations.FadeOutUp;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.EventHandler;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Tooltip;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.paint.Color;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
-
-import javafx.application.Application;
-import javafx.stage.StageStyle;
-import javafx.scene.Scene;
-
-import javafx.scene.layout.Pane;
-
-import javafx.fxml.FXMLLoader;
 
 public class OptionsController implements Initializable
 {
@@ -46,10 +30,17 @@ public class OptionsController implements Initializable
 	@FXML private JFXButton addWordButton;
 	@FXML private JFXButton deleteWordButton;
 	@FXML private JFXTextField addWordField;
+	@FXML private BorderPane mainBox;
+	@FXML private ImageView arrow;
 
 	private Scene mainScene;
 	private Scene minScene;
 	private ObservableList<String> someListView;
+	private boolean hasAnimationStarted = false;
+	private Stage primaryStage;
+	
+	HangmanController mainController;
+	MinimizedController minController;
 
 	@FXML
 	private void quitGame()
@@ -66,19 +57,30 @@ public class OptionsController implements Initializable
     {
     	minScene = someScene;
     }
+    
+    public void setArrowVisible()
+    {
+    	arrow.setVisible(true);
+    }
 
 	public void openGameScene(ActionEvent actionEvent) //throws IOException
 	{
-		Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		//mainController.optToMainTransition();
+		//mainController.playFadeIn();
+		mainController.setArrowVisible();
+		mainController.playFadeIn();
+		primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
 	    primaryStage.setScene(mainScene);
 	    mainScene.getRoot().requestFocus();
 	}
 
 	public void openMinScene(ActionEvent actionEvent) //throws IOException
 	{
-		Stage primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
-	    primaryStage.setScene(minScene);
-	    minScene.getRoot().requestFocus();
+		if(hasAnimationStarted == false)
+		{
+			playFadeOut(actionEvent, minScene);
+		}
+		hasAnimationStarted = true;
 	}
 
 	public void toggleWasChanged(ActionEvent e)
@@ -106,19 +108,18 @@ public class OptionsController implements Initializable
 
 	public void addWordWasHit(ActionEvent e)
 	{
-	
-
 		if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 		{
 			addWordField.setText("");
 			addWordField.setPromptText("letters only");
 		}
+		
 		else if(addWordField.getText().length() > 17)
 		{
 			addWordField.setText("");
 			addWordField.setPromptText("too long");
 		}
-			//if it dosn't contain letters
+
 		else if((!(addWordField.getText().matches("[a-zA-Z].*"))))
 		{
 			addWordField.setText("");
@@ -153,15 +154,12 @@ public class OptionsController implements Initializable
 				FileInstantiation.deleteSomeWord(someIndex);
 				
 				someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
-				wordBank.setItems(someListView);
-				
+				wordBank.setItems(someListView);	
 			}
 			catch(Exception d)
 			{
-				//System.out.println("should fire");
+				d.printStackTrace();
 			}
-			//someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
-			//wordBank.setItems(someListView);
 		}
 	}
 	@Override
@@ -179,7 +177,6 @@ public class OptionsController implements Initializable
 		addWordField.setDisable(!(isToggleOn));
 		wordBank.setDisable(!(isToggleOn));
 
-
 		FileInstantiation.setWordList("WordBank.txt");//when the toggle switches, update setWordList
 
 		someListView = FXCollections.observableArrayList(FileInstantiation.getRandomWordArrList());
@@ -192,7 +189,38 @@ public class OptionsController implements Initializable
 		else// if (isToggleOn == false)
 		{
 			whichWordList = "DefaultDictionary.txt";
-		}
-
+		}		
+	}
+	
+	public void playFadeIn()
+	{
+		new FadeInDown(mainBox).play();
+	}
+	
+	public void playFadeOut(ActionEvent actionEvent, Scene someScene)
+	{
+		arrow.setVisible(false);
+		FadeOutUp someFadeOut = new FadeOutUp(mainBox);
+		
+		someFadeOut.setOnFinished(event -> 
+		{
+			//load minScene
+		    someScene.getRoot().requestFocus();
+			primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
+		    primaryStage.setScene(someScene);
+		    hasAnimationStarted = false;
+		});
+		
+		someFadeOut.play();
+	}
+	
+	public void setRootPaneController(HangmanController someHangmanController)
+    {
+    	mainController = someHangmanController;
+    }
+	
+	public void setMinPaneController(MinimizedController someMinimizedController)
+	{
+	    minController = someMinimizedController;
 	}
 }
