@@ -5,6 +5,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -22,6 +23,7 @@ public class Main extends Application {
 		try
 		{
 			primaryStage.setAlwaysOnTop(true);
+			primaryStage.getIcons().add(new Image("/imageAssets/hangmanIcon.jpg"));
 
 			//making references to each scene to maintain the specific state when switching between them
 			//then adding those references to all controllers
