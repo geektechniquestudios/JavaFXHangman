@@ -9,7 +9,7 @@ import fileIO.*;
 
 public class GameLogic 
 {
-	static ArrayList<String> wordBank = new ArrayList<String>();//should probably go in getRandomWord
+	static ArrayList<String> wordBank = new ArrayList<String>();
 	
 	public static String getRandomWord()
 	{	

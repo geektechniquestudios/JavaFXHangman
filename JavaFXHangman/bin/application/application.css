@@ -3,7 +3,6 @@
 	-fx-background-color: transparent;
 }
 
-
 .buttons
 {
 	-fx-background-radius: 0.7em;
@@ -75,13 +74,10 @@
 	-fx-font-weight: bold;
 }
 
-.list-view:focused .list-cell:filled:focused:selected {
+.list-view:focused .list-cell:filled:focused:selected 
+{
     -fx-background-color:  #3D4956;
     -fx-background-insets: 0, 1, 2;
     -fx-background: -fx-accent;
     -fx-text-fill: white;
 }
-
-
-
-

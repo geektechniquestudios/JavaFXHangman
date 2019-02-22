@@ -15,8 +15,8 @@ public class Main extends Application {
 
 	private static double xOffset = 0;
 	private static double yOffset = 0;
+	
 	private String wordToDisplay;
-
 
 	@Override
 	public void start(Stage primaryStage) {
@@ -63,6 +63,9 @@ public class Main extends Application {
 	        rootPaneController.setMinPaneController(minPaneController);
 	        rootPaneController.setOptionsPaneController(optionsPaneController);
 	        
+	        //primary stage to mainController
+	        
+	        
 			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window dressing
 
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
@@ -71,6 +74,7 @@ public class Main extends Application {
 
 			gameScene.setFill(javafx.scene.paint.Color.TRANSPARENT);//transp backgrd
 			optionsScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
+			minScene.setFill(javafx.scene.paint.Color.TRANSPARENT);
 
 			gameScenePane.requestFocus();//makes it so no buttons are highlighted
 

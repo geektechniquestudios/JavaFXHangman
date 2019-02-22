@@ -7,12 +7,17 @@ import javafx.event.EventHandler;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
+/** 
+ * 
+ * Shout out to
+ Loïc Sculier aka typhon0
+ 
+ for making the base of this animation code. It's %99 his work
+ **/
+
 public abstract class AnimationFX {
 
-    /**
-     * Used to specify an animation that repeats indefinitely, until the
-     * {@code stop()} method is called.
-     */
+
     public static final int INDEFINITE = -1;
     private Timeline timeline;
     private boolean reset;
@@ -20,11 +25,6 @@ public abstract class AnimationFX {
     private AnimationFX nextAnimation;
     private boolean hasNextAnimation;
 
-    /**
-     * Create a new animation
-     *
-     * @param node the node to affect
-     */
     public AnimationFX(Node node) {
         super();
         setNode(node);

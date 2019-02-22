@@ -8,6 +8,7 @@ import javafx.scene.layout.HBox;
 import java.net.URL;
 import java.util.ResourceBundle;
 import com.jfoenix.controls.JFXButton;
+import animations.FadeIn;
 import animations.FadeInDown;
 import animations.FadeOutUp;
 import fileIO.FileInstantiation;
@@ -258,7 +259,7 @@ public class HangmanController implements Initializable
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		playFadeIn();
+		playFadeInBeginning();
 	}
 	
 	public void setMinPaneController(MinimizedController someMinController)
@@ -271,9 +272,15 @@ public class HangmanController implements Initializable
 		optionsController = someOptionsController;
 	}
 	
+	public void playFadeInBeginning()
+	{
+		new FadeIn(mainBox).play();
+	}
+	
 	public void playFadeIn()
 	{
 		new FadeInDown(mainBox).play();	
+		
 	}
 	
 	public void optToMainTransition()

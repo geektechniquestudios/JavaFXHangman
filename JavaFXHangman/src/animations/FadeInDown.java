@@ -8,11 +8,16 @@ import javafx.util.Duration;
 
 public class FadeInDown extends AnimationFX{
 
-    /**
-     * Create new FadeInDown
-     *
-     * @param node The node to affect
-     */
+	/** 
+	 * 
+	 * Shout out to
+	 Loïc Sculier aka typhon0
+	 
+	 for making the base of this animation code. It's %99 his work
+	 **/
+	
+	Timeline someTimeline;
+	
     public FadeInDown(Node node) {
         super(node);
     }
@@ -25,10 +30,12 @@ public class FadeInDown extends AnimationFX{
         return this;
     }
 
+    
     @Override
     void initTimeline() {
         setTimeline(new Timeline(
-                new KeyFrame(Duration.millis(0),
+        		
+                new KeyFrame(Duration.millis(50),
                         new KeyValue(getNode().opacityProperty(), 0, AnimateFXInterpolator.EASE),
                         new KeyValue(getNode().translateYProperty(), -getNode().getBoundsInParent().getHeight(), AnimateFXInterpolator.EASE)
                 ),
