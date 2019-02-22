@@ -2,6 +2,14 @@ package animations;
 
 import javafx.animation.Interpolator;
 
+/** 
+ * 
+ * Shout out to
+ Loïc Sculier aka typhon0
+ 
+ for making the base of this animation code. It's %99 his work
+ **/
+
 public final class AnimateFXInterpolator 
 {
     private AnimateFXInterpolator() 

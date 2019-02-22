@@ -65,8 +65,6 @@ public class OptionsController implements Initializable
 
 	public void openGameScene(ActionEvent actionEvent) //throws IOException
 	{
-		//mainController.optToMainTransition();
-		//mainController.playFadeIn();
 		mainController.setArrowVisible();
 		mainController.playFadeIn();
 		primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
@@ -107,7 +105,7 @@ public class OptionsController implements Initializable
 	}
 
 	public void addWordWasHit(ActionEvent e)
-	{
+	{//content filtering
 		if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 		{
 			addWordField.setText("");

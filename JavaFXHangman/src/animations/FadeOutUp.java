@@ -6,17 +6,16 @@ import javafx.animation.Timeline;
 import javafx.scene.Node;
 import javafx.util.Duration;
 
+/** 
+ * 
+ * Shout out to
+ Loïc Sculier aka typhon0
+ 
+ for making the base of this animation code. It's %99 his work
+ **/
 
-/**
- * @author Loïc Sculier aka typhon0
- */
 public class FadeOutUp extends AnimationFX {
 
-    /**
-     * Create new FadeOutUp
-     *
-     * @param node The node to affect
-     */
     public FadeOutUp(Node node) {
         super(node);
     }

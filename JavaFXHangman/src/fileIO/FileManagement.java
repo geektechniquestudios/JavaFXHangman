@@ -31,14 +31,12 @@ public class FileManagement
 				new File
 				(
 					"StateMemory.txt"
-					//"WordBank.txt"
-					//System.getProperty("user.dir") + "/WordBank.txt"
 				)
 			);
 		}
 		catch(Exception e)
 		{
-			System.out.println("Something went wrong!");
+			System.out.println("Opening StateMemory failed!");
 		}
 	}
 
@@ -63,7 +61,7 @@ public class FileManagement
 		}
 		catch(Exception e)
 		{
-			System.out.println("Something went wrong!");
+			System.out.println("Writing to StateMemory failed!");
 		}
 	}
 
@@ -84,24 +82,17 @@ public class FileManagement
 		}
 		catch(Exception e)
 		{
-			System.out.println("Something went wrong!");
+			System.out.println("Opening " + wordListToUse + "failed!");
 		}
 	}
 
 	public ArrayList<String> readFile()
 	{
-//		while(someScanner.hasNext())
-//		{
-//			String a = someScanner.nextLine();
-//			//System.out.println(a);
-//		}
-
 		ArrayList<String> someList = new ArrayList<String>();
 		while (someScanner.hasNext())
 		{
 		    someList.add(someScanner.nextLine());
 		}
-
 		return someList;
 	}
 
@@ -126,7 +117,7 @@ public class FileManagement
 		}
 		catch(Exception e)
 		{
-			System.out.println("Something went wrong!");
+			System.out.println("Writing to WordBank failed!");
 		}
 	}
 
@@ -159,7 +150,7 @@ public class FileManagement
 		}
 		catch(Exception e)
 		{
-			System.out.println("Something went wrong!");
+			System.out.println("Deleting a word failed!");
 		}
 	}
 }
