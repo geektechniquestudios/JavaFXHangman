@@ -9,8 +9,7 @@ import javafx.stage.Stage;
 
 public class MinimizedController 
 {
-	@FXML
-	private HBox topBox;
+	@FXML private HBox topBox;
 	private Scene optionsScene;
     private Scene mainScene;
     private Stage primaryStage;

@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-
+																					
 public class Main extends Application {
 
 	private static double xOffset = 0;
