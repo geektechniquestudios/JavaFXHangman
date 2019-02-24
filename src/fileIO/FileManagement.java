@@ -30,12 +30,14 @@ public class FileManagement
 			(
 				new File
 				(
-					"StateMemory.txt"
+					//"StateMemory.txt"
+					System.getProperty("user.dir") + "/src/memory/StateMemory.txt"
 				)
 			);
 		}
 		catch(Exception e)
 		{
+			e.printStackTrace();
 			System.out.println("Opening StateMemory failed!");
 		}
 	}
@@ -50,12 +52,12 @@ public class FileManagement
 		try
 		{
 			BufferedWriter someWriter = new BufferedWriter
+			(
+				new FileWriter
 				(
-					new FileWriter
-						(
-							"StateMemory.txt", false
-						)
-				);
+					System.getProperty("user.dir") + "/src/memory/StateMemory.txt", false
+				)
+			);
 			someWriter.write(toggleState);
 			someWriter.close();
 		}
@@ -74,7 +76,7 @@ public class FileManagement
 				(
 					new File
 					(
-						wordListToUse
+						System.getProperty("user.dir") + "/src/memory/" + wordListToUse
 						//"WordBank.txt"
 						//System.getProperty("user.dir") + "/WordBank.txt"
 					)
@@ -82,7 +84,7 @@ public class FileManagement
 		}
 		catch(Exception e)
 		{
-			System.out.println("Opening " + wordListToUse + "failed!");
+			System.out.println("Opening " + wordListToUse + " failed!");
 		}
 	}
 
@@ -109,7 +111,7 @@ public class FileManagement
 				(
 					new FileWriter
 						(
-							"WordBank.txt", true
+								System.getProperty("user.dir") + "/src/memory/" + "WordBank.txt", true
 						)
 				);
 			someWriter.append("\n" + newWord);
@@ -129,7 +131,7 @@ public class FileManagement
 				(
 					new FileWriter
 						(
-							"WordBank.txt", false
+								System.getProperty("user.dir") + "/src/memory/" + "WordBank.txt", false
 						)
 				);
 
