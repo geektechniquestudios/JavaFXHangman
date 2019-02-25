@@ -66,7 +66,7 @@ public class Main extends Application {
 	        //primary stage to mainController
 	        
 	        
-			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window dressing
+			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window decoration
 
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			optionsScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
