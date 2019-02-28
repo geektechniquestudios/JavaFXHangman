@@ -63,11 +63,16 @@ public class Main extends Application {
 	        rootPaneController.setMinPaneController(minPaneController);
 	        rootPaneController.setOptionsPaneController(optionsPaneController);
 	        
-	        //primary stage to mainController
 	        
 	        
-			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window decoration
-
+	        
+	        //the below line causes graphical errors during scene switching 
+			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window decoration and makes stage transp
+			//primaryStage.initStyle(StageStyle.UNDECORATED);	
+			
+			
+			
+			//adding the stylesheet to all scenes
 			gameScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			optionsScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			minScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
