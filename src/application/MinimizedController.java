@@ -17,23 +17,12 @@ public class MinimizedController
     HangmanController mainController;
     OptionsController optionsController;
 
-    @FXML
-	private void quitGame()
+    @FXML private void quitGame()
 	{
 		System.exit(0);
 	}
 
-    public void setOptionsScene(Scene someScene)
-    {
-    	optionsScene = someScene;
-    }
-
-    public void setMainScene(Scene scene)
-    {
-        mainScene = scene;
-    }
-
-    public void openGameScene(ActionEvent actionEvent)
+    @FXML private void openGameScene(ActionEvent actionEvent)
     {
     	mainController.setArrowVisible();
     	mainController.playFadeIn();
@@ -42,7 +31,7 @@ public class MinimizedController
         mainScene.getRoot().requestFocus();
     }
 
-    public void openOptionsScene(ActionEvent actionEvent) //throws IOException
+    @FXML private void openOptionsScene(ActionEvent actionEvent) //throws IOException
     {
     	optionsController.setArrowVisible();
     	optionsController.playFadeIn();
@@ -51,7 +40,7 @@ public class MinimizedController
         optionsScene.getRoot().requestFocus();    
     }
 
-    public void minimizeScene(ActionEvent actionEvent)
+    @FXML private void minimizeScene(ActionEvent actionEvent)
     {
         primaryStage = (Stage)((Node)actionEvent.getSource()).getScene().getWindow();
         primaryStage.setIconified(true);
@@ -65,5 +54,15 @@ public class MinimizedController
     public void setOptionsPaneController(OptionsController someOptionsController)
     {
     	optionsController = someOptionsController;
+    }
+    
+    public void setOptionsScene(Scene someScene)
+    {
+    	optionsScene = someScene;
+    }
+
+    public void setMainScene(Scene scene)
+    {
+        mainScene = scene;
     }
 }

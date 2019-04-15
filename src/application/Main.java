@@ -31,6 +31,8 @@ public class Main extends Application {
 		    Parent gameScenePane = root.load();
 		    Scene gameScene = new Scene(gameScenePane);
 		    
+		    
+		    
 		    FXMLLoader minPaneLoader = new FXMLLoader(getClass().getResource("HangmanMinimized.fxml"));
 	        Parent minSceneLoader = minPaneLoader.load();
 	        Scene minScene = new Scene(minSceneLoader);
@@ -64,9 +66,8 @@ public class Main extends Application {
 	        rootPaneController.setOptionsPaneController(optionsPaneController);
 	        
 	        
-	        
-	        
-	        //the below line causes graphical errors during scene switching 
+	             
+	        //the below line causes graphical errors during scene switching --- searching for a fix
 			primaryStage.initStyle(StageStyle.TRANSPARENT);//removes window decoration and makes stage transp
 			//primaryStage.initStyle(StageStyle.UNDECORATED);	
 			
