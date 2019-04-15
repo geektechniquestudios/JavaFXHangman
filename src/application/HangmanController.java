@@ -64,12 +64,12 @@ public class HangmanController implements Initializable
 	private Scene optionsScene;
 	private Parent mainSceneParent;
 	private String currentWord;
-	private String wordToDisplay; //def is used | ignore warning
+	private String wordToDisplay; //definitely is used | ignore warning
 	private String whichHangmanPath;
 	private int failCounter = 1;
 	private Image imageObject;
 	private boolean isGameBeingPlayed;
-	private boolean isFirstPlay = true; //def is used | ignore warning
+	private boolean isFirstPlay = true; //definitely is used | ignore warning
 	private boolean hasAnimationStarted = false;
 	private Stage primaryStage;
 	
@@ -77,8 +77,8 @@ public class HangmanController implements Initializable
 	OptionsController optionsController;
 	BorderPane optMainBox;
 
-	@FXML
- 	private void quitGame()
+	
+ 	@FXML private void quitGame()
 	{
 		System.exit(0);
 	}
@@ -158,7 +158,7 @@ public class HangmanController implements Initializable
 			}
 		}
 
-		String wordToDisplay = new String(toBeBlankArray);//toBeBlankArray.toString(); wasn't working, so String Constructor
+		String wordToDisplay = new String(toBeBlankArray);
 		wordToGuess.setText(wordToDisplay);
 		isGameBeingPlayed = true;
 		failCounter = 1;

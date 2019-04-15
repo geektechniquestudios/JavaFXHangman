@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public class FileInstantiation
 {
-	FileManagement someFileManagement;//prob not going to use
 	private static String wordListType;
 
 	public static void setWordList(String whichWordList)

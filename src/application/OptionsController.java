@@ -42,28 +42,12 @@ public class OptionsController implements Initializable
 	HangmanController mainController;
 	MinimizedController minController;
 
-	@FXML
-	private void quitGame()
+	@FXML private void quitGame()
 	{
 		System.exit(0);
 	}
 
-	public void setMainScene(Scene scene)
-    {
-        mainScene = scene;
-    }
-
-    public void setMinScene(Scene someScene)
-    {
-    	minScene = someScene;
-    }
-    
-    public void setArrowVisible()
-    {
-    	arrow.setVisible(true);
-    }
-
-	public void openGameScene(ActionEvent actionEvent) //throws IOException
+	@FXML private void openGameScene(ActionEvent actionEvent) 
 	{
 		mainController.setArrowVisible();
 		mainController.playFadeIn();
@@ -72,7 +56,7 @@ public class OptionsController implements Initializable
 	    mainScene.getRoot().requestFocus();
 	}
 
-	public void openMinScene(ActionEvent actionEvent) //throws IOException
+	public void openMinScene(ActionEvent actionEvent)
 	{
 		if(hasAnimationStarted == false)
 		{
@@ -81,12 +65,12 @@ public class OptionsController implements Initializable
 		hasAnimationStarted = true;
 	}
 
-	public void toggleWasChanged(ActionEvent e)
+	@FXML private void toggleWasChanged(ActionEvent e)
 	{
 		boolean isToggleEnabled = toggleDict.isSelected();
 		String wordToSend;
 
-		addWordButton.setDisable(!(isToggleEnabled));//these disable buttons if the toggle state is off
+		addWordButton.setDisable(!(isToggleEnabled));//these will disable buttons if the toggle state is off
 		deleteWordButton.setDisable(!(isToggleEnabled));
 		addWordField.setDisable(!(isToggleEnabled));
 		wordBank.setDisable(!(isToggleEnabled));
@@ -104,7 +88,7 @@ public class OptionsController implements Initializable
 		FileInstantiation.setToggleState(isToggleEnabled);
 	}
 
-	public void addWordWasHit(ActionEvent e)
+	@FXML private void addWordWasHit(ActionEvent e)
 	{//content filtering
 		if(!(addWordField.getText().matches("[a-zA-Z ]*")))
 		{
@@ -138,7 +122,7 @@ public class OptionsController implements Initializable
 		}	
 	}
 
-	public void deleteWordWasHit(ActionEvent e)
+	@FXML private void deleteWordWasHit(ActionEvent e)
 	{
 		if(FileInstantiation.getRandomWordArrList().toArray().length == 1)
 		{
@@ -221,4 +205,19 @@ public class OptionsController implements Initializable
 	{
 	    minController = someMinimizedController;
 	}
+	
+	public void setMainScene(Scene scene)
+    {
+        mainScene = scene;
+    }
+
+    public void setMinScene(Scene someScene)
+    {
+    	minScene = someScene;
+    }
+    
+    public void setArrowVisible()
+    {
+    	arrow.setVisible(true);
+    }
 }
