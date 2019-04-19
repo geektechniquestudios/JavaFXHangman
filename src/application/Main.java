@@ -16,8 +16,6 @@ public class Main extends Application {
 	private static double xOffset = 0;
 	private static double yOffset = 0;
 	
-	private String wordToDisplay;
-
 	@Override
 	public void start(Stage primaryStage) {
 		try
