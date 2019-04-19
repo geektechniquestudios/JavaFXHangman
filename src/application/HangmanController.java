@@ -163,7 +163,7 @@ public class HangmanController implements Initializable
 		isGameBeingPlayed = true;
 		failCounter = 1;
 
-		imageObject = new Image("/ImageAssets/hangman1.png");
+		imageObject = new Image("/imageAssets/hangman1.png");
 		hangmanImage.setImage(imageObject);
 
 		aBut.setDisable(false);
@@ -239,7 +239,7 @@ public class HangmanController implements Initializable
 			else//fires if they guessed wrong
 			{
 				failCounter++;
-				whichHangmanPath = "/ImageAssets/hangman" + failCounter + ".png";
+				whichHangmanPath = "/imageAssets/hangman" + failCounter + ".png";
 				if(failCounter == 7)//player loses
 				{
 					isGameBeingPlayed = false;

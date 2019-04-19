@@ -5,15 +5,15 @@
 ; NOTE: The value of AppId uniquely identifies this application.
 ; Do not use the same AppId value in installers for other applications.
 ; (To generate a new GUID, click Tools | Generate GUID inside the IDE.)
-AppId={{C5556A26-BD60-4338-B4E9-33E7EA148588}
+AppId={{9552F146-5468-4EB9-A4BF-F09C1F0C8FFF}
 AppName=FXHangman
-AppVersion=1.0
-;AppVerName=FXHangman 1.0
+AppVersion=1.0.1
+;AppVerName=FXHangman 1.0.1
 AppPublisher=GeekTechniqueStudios
 DefaultDirName={pf}\FXHangman
 DisableProgramGroupPage=yes
-OutputDir=C:\Users\nope\Desktop
-OutputBaseFilename=FXHangman
+OutputDir=C:\Users\nope\Desktop\GitRepos\FXHangman
+OutputBaseFilename=FXHangmanInstaller
 SetupIconFile=C:\Users\nope\Desktop\GitRepos\FXHangman\src\images\mainIcon.ico
 Compression=lzma
 SolidCompression=yes
