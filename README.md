@@ -6,3 +6,5 @@ If you would like to play this game, there is an installer called FXHangmanInsta
 ## No ads, no spam, no data collection
 
 <a href="https://imgflip.com/gif/2yzgze"><img src="https://i.imgflip.com/2yzgze.gif" title="made at imgflip.com"/></a>
+
+###### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE with Java 1.8 using [JPhoenix](https://github.com/jfoenixadmin/JFoenix) and JavaFX. You must import JFoenix if you want the code to run.
