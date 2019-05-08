@@ -1,10 +1,12 @@
 # JavaFXHangman
+
+## [Watch a video demo here](https://youtu.be/-0agdFWO8us)
+
 This is a javafx hangman game designed to be sleek and custom. It has animations and uses the JFoenix library. It features an always-on-top functionality, state persitence, and a wordlist of almost 1000 words. You can, however, make your own wordlist if you would like. If anyone enjoys this game and wants a bigger word list or some reasonable feature, just drop me a line, and I'd be happy to oblige.
 
 If you would like to play this game, there is an installer called FXHangmanInstaller.exe that is very straightforward to use.
 
-## No ads, no spam, no data collection
+![](hangmanDemo.png)
 
-<a href="https://imgflip.com/gif/2yzgze"><img src="https://i.imgflip.com/2yzgze.gif" title="made at imgflip.com"/></a>
 
 ###### If you want to fork this repository, or you would like to edit the code, it is important for you to know that this project was made using the Eclipse IDE with Java 1.8 using [JPhoenix](https://github.com/jfoenixadmin/JFoenix) and JavaFX. You must import JFoenix if you want the code to run.
