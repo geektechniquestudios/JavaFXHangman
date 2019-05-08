@@ -64,7 +64,6 @@ public class HangmanController implements Initializable
 	private Scene optionsScene;
 	private Parent mainSceneParent;
 	private String currentWord;
-	private String wordToDisplay; //definitely is used | ignore warning
 	private String whichHangmanPath;
 	private int failCounter = 1;
 	private Image imageObject;
@@ -279,8 +278,7 @@ public class HangmanController implements Initializable
 	
 	public void playFadeIn()
 	{
-		new FadeInDown(mainBox).play();	
-		
+		new FadeInDown(mainBox).play();		
 	}
 	
 	public void optToMainTransition()
